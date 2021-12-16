@@ -32,11 +32,14 @@
 
 ## Overview
 
+<div>
+   <img src='./screenshots/Mobile - 1.png' alt='Mobile' width='310px'/>
+   <img src='./screenshots/Mobile - 2.png' alt='Mobile' width='310px'/>
+   <img src='./screenshots/Mobile - 3.png' alt='Mobile' width='310px'/>
+</div>
+
 <img src='./screenshots/Desktop - 1.png' alt='Desktop'/>
 <img src='./screenshots/Desktop - 2.png' alt='Desktop'/>
-<img src='./screenshots/Mobile - 1.png' alt='Mobile'/>
-<img src='./screenshots/Mobile - 2.png' alt='Mobile'/>
-<img src='./screenshots/Mobile - 3.png' alt='Mobile'/>
 
 
 ### Built With
