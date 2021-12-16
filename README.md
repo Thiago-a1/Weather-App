@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">Weather App</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://vibrant-nightingale-cce3d9.netlify.app/">
       Solution
     </a>
     <span> | </span>
@@ -32,8 +32,11 @@
 
 ## Overview
 
-![Desktop](./Desktop.png)
-![Mobile](./Mobile.png)
+<img src='./screenshots/Desktop - 1.png' alt='Desktop'/>
+<img src='./screenshots/Desktop - 2.png' alt='Desktop'/>
+<img src='./screenshots/Mobile - 1.png' alt='Mobile'/>
+<img src='./screenshots/Mobile - 2.png' alt='Mobile'/>
+<img src='./screenshots/Mobile - 3.png' alt='Mobile'/>
 
 
 ### Built With
@@ -44,7 +47,7 @@
 
 ## Links
 
-- Live Site URL: [live site]()
+- Live Site URL: [live site](https://vibrant-nightingale-cce3d9.netlify.app/)
 
 ## Acknowledgements
 
