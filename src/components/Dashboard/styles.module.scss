@@ -1,0 +1,198 @@
+.dashboard {
+  width: 100%;
+  height: 100vh;
+
+  padding: 32px 128px;
+
+  background-color: #100E1D;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: end;
+
+  width: 100%;
+  height: 42px;
+
+  button {
+    font-size: 18px;
+    font-weight: 500;
+
+    width: 40px;
+    height: 40px;
+    margin-left: 16px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #585676;
+    color: #FFF;
+    cursor: pointer;
+  }
+}
+
+.dayCards_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  column-gap: 8px;
+
+  margin: 64px auto;
+
+  .card {
+    text-align: center;
+    width: 140px;
+
+    padding: 16px;
+
+    background-color: #1E213A;
+
+    h1 {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    img {
+      width: 62px;
+      height: 62px;
+
+      margin: 32px auto;
+    }
+
+    .card_footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      font-size: 16px;
+    }
+  }
+}
+
+.hightlights {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  div:nth-child(4),
+  div:nth-child(5) {
+    margin-top: 32px;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+
+    width: 100%;
+
+    margin-bottom: 32px;
+  }
+
+  .hightlights_card {
+    text-align: center;
+
+    width: 328px;
+    padding: 22px 16px;
+
+    background-color: #1E213A;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+
+      span {
+        font-size: 36px;
+        font-weight: 500;
+      }
+    }
+
+    .wind {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      
+      margin-top: 32px;
+
+      svg {
+        margin-right: 16px;
+      }
+    }
+
+    .progressBar {
+      width: 229px;
+      margin: auto;
+      color: #A09FB1;
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h3 {
+          font-size: 12px;
+          font-weight: 700;
+        }
+      }
+
+      .progress {
+        position: relative;
+        width: 100%;
+        height: 10px;
+        margin: 6px auto;
+        border-radius: 8px;
+        background-color: #fff;
+
+        .bar {
+          position: absolute;
+          content: '';
+          height: 100%;
+          border-radius: 8px;
+          background-color: #FFEC65;
+          left: 0;
+          top: 0;
+        }
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 700;
+        text-align: end;
+      }
+    }
+  }
+}
+
+@media (max-width: 810px) {
+  .dashboard {
+    height: 100%;
+    padding: 32px;
+  }
+
+  .buttons_container {
+    display: none;
+  }
+
+  .dayCards_container {
+    margin: 32px 16px;
+  }
+
+  .hightlights {
+    .hightlights_card {
+      width: 100%;
+    }
+
+    .hightlights_card + .hightlights_card {
+      margin-top: 32px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+main {
+  display: grid;
+
+  article {
+    grid-area: sidebar;
+  }
+
+  section {
+    grid-area: dashboard;
+  }
+
+  grid-template-columns: 459px 1fr;
+  grid-template-areas: 
+    "sidebar dashboard"
+  ;
+
+  @media (max-width: 810px) {
+    grid-template-columns: 100vw;
+    grid-template-areas: 
+    "sidebar "
+    "dashboard"
+  ;
+  }
+}
