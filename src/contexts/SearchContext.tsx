@@ -46,7 +46,7 @@ interface Data {
 
 interface SearchContextData {
   data: Data;
-  getName: (input: string) => void;
+  getQuery: (input: string) => void;
   isLoading: boolean;
   measurement: string;
   handleMeasurement: (value: 'F' | 'C') => void;
@@ -60,13 +60,13 @@ export const SearchProvider = ({children}: SearchProviderProps) => {
   const [data, setData] = useState({} as Data);
   const [isLoading, setIsLoading] = useState(true);
   const [measurement, setMeasurement] = useState<'F' | 'C'>('C')
-  const [name, setName] = useState('rio');
+  const [query, setQuery] = useState('rio');
 
   useEffect(() => {
     setIsLoading(true)
     async function getData() {
       try {
-        let response = await api.get(`forecast.json?key=${import.meta.env.VITE_API_KEY}&q=${name}&days=5&aqi=no&alerts=no`)
+        let response = await api.get(`forecast.json?key=${import.meta.env.VITE_API_KEY}&q=${query}&days=5&aqi=no&alerts=no`)
         let { data } = response;
 
         setData(data)
@@ -78,8 +78,8 @@ export const SearchProvider = ({children}: SearchProviderProps) => {
     getData()
   }, [name])
   
-  function getName(input: string) {
-    setName(input);
+  function getQuery(input: string) {
+    setQuery(input);
   }
 
   function handleMeasurement (value: 'F' | 'C') {
@@ -90,7 +90,7 @@ export const SearchProvider = ({children}: SearchProviderProps) => {
     <SearchContext.Provider 
       value={{
         data,
-        getName,
+        getQuery,
         isLoading,
         measurement,
         handleMeasurement

@@ -13,7 +13,7 @@ import { expandIcon } from '../../utils/expandIcon';
 
 
 export const Sidebar = () => {
-  const { data, getName, isLoading, measurement } = useContext(SearchContext);
+  const { data, getQuery, isLoading, measurement } = useContext(SearchContext);
 
   const [searchSidebar, setSearchSidebar] = useState(false);
   const [input, setInput] = useState('');
@@ -24,17 +24,26 @@ export const Sidebar = () => {
 
   function handleSubmit (event: FormEvent) {
     event.preventDefault();
-    getName(input);
+    getQuery(input);
     setInput('');
     setSearchSidebar(false);
   }
 
-  async function getIpClient() {
-    try {
-      const response = await axios.get('https://api.ipify.org?format=json')
-      getName(response.data.ip);
-    } catch (err) {
-      alert(err);
+  function getClientPosition() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition (
+        (position) => {
+          console.log(`${position.coords.latitude},${position.coords.longitude}`)
+          getQuery(`${position.coords.latitude},${position.coords.longitude}`)
+        },
+        null,
+        {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
+        });
+    } else {
+      alert("Geolocation is not suported!")
     }
   }
 
@@ -94,7 +103,7 @@ export const Sidebar = () => {
         >Search for places</button>
         <button 
           className={styles.location_button}
-          onClick={() => getIpClient()}
+          onClick={() => getClientPosition()}
         >
           <MdMyLocation size="24" />
         </button>
