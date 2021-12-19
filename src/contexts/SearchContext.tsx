@@ -76,7 +76,7 @@ export const SearchProvider = ({children}: SearchProviderProps) => {
       }
     }
     getData()
-  }, [name])
+  }, [query])
   
   function getQuery(input: string) {
     setQuery(input);

@@ -33,7 +33,6 @@ export const Sidebar = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition (
         (position) => {
-          console.log(`${position.coords.latitude},${position.coords.longitude}`)
           getQuery(`${position.coords.latitude},${position.coords.longitude}`)
         },
         null,
